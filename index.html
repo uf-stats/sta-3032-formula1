@@ -122,6 +122,8 @@
 	<li><a href="#linear-combinations">Linear Combinations</a></li>
         <li><a href="#discrete-distribution">Discrete Distributions</a></li>
         <li><a href="#continuous-distribution">Continuous Distributions</a></li>
+        <li><a href="#central-limit-theorem">Central Limit Theorem</a></li>
+        <li><a href="#qq-plots">QQ Plots</a></li>
       </ul>
     </nav>
   </header>
@@ -1362,6 +1364,66 @@
   <mn>0</mn>
 </math>
     </section>
+
+    <!-- Central Limit Theorem -->
+    <section id="central-limit-theorem" aria-labelledby="central-limit-theorem-heading">
+      <h3 id="central-limit-theorem-heading">Central Limit Theorem</h3>
+
+      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="n greater than 30">
+  <mi>n</mi>
+  <mo>&gt;</mo>
+  <mn>30</mn>
+</math>
+      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="X bar is approximately distributed as normal with mean mu and standard deviation sigma over square root of n">
+  <mover>
+    <mi>X</mi>
+    <mo>_</mo>
+  </mover>
+  <mover>
+    <mo>∼</mo>
+    <mtext style="font-size: 70%;">approx.</mtext>
+  </mover>
+  <mi>N</mi>
+  <mrow>
+    <mo>(</mo>
+    <mi>μ</mi>
+    <mo>,</mo>
+    <mfrac>
+      <mi>σ</mi>
+      <msqrt>
+        <mi>n</mi>
+      </msqrt>
+    </mfrac>
+    <mo>)</mo>
+  </mrow>
+</math>    
+</section>
+
+    <!-- QQ Plots-->
+    <section id="qq-plots" aria-labelledby="qq-plots-heading">
+      <h3 id="qq-plots-heading">QQ Plots</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Left tail</th>
+      <th scope="col">Right tail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Above line</th>
+      <td>Heavier</td>
+      <td>Lighter</td>
+    </tr>
+    <tr>
+      <th scope="row">Below line</th>
+      <td>Lighter</td>
+      <td>Heavier</td>
+    </tr>
+  </tbody>
+</table></section>
 
 
   </main>
