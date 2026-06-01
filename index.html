@@ -121,14 +121,7 @@
 	<li><a href="#linear-transformations">Linear Transformations</a></li>
 	<li><a href="#linear-combinations">Linear Combinations</a></li>
         <li><a href="#discrete-distribution">Discrete Distributions</a></li>
-        <li><a href="#crd-model">CRD Model</a></li>
-        <li><a href="#crd-ss">CRD Sums of Squares</a></li>
-        <li><a href="#crd-inference">CRD Inference</a></li>
-        <li><a href="#post-hoc">Post Hoc Comparisons</a></li>
-        <li><a href="#rbd-model">RBD Model</a></li>
-        <li><a href="#rbd-ss">RBD Sum of Squares</a></li>
-        <li><a href="#rbd-inference">RBD Inference</a></li>
-        <li><a href="#rbd-post-hoc">RBD Post Hoc</a></li>
+        <li><a href="#continuous-distribution">Continuous Distributions</a></li>
       </ul>
     </nav>
   </header>
@@ -1144,388 +1137,232 @@
 
     </section>
 
-    <!-- CRD Model -->
-    <section id="crd-model" aria-labelledby="crd-model-heading">
-      <h3 id="crd-model-heading">CRD Model</h3>
+    <!-- Continuous Distributions -->
+    <section id="continuous-distribution" aria-labelledby="continuous-distribution-heading">
+      <h3 id="continuous-distribution-heading">Continuous Distributionslkki</h3>
 
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="Y_ij equals mu plus alpha_i equals mu_i plus epsilon_ij">
-        <msub><mi>Y</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub>
-        <mo>=</mo>
-        <mi>μ</mi><mo>+</mo><msub><mi>α</mi><mi>i</mi></msub>
-        <mo>=</mo>
-        <msub><mi>μ</mi><mi>i</mi></msub>
-        <mo>+</mo>
-        <msub><mi>ϵ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub>
-      </math>
+<p>Uniform:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="f of x semicolon a comma b equals 1 over b minus a, for x in the interval a to b">
+  <mi>f</mi>
+  <mi>(</mi>
+  <mi>x</mi>
+  <mo>;</mo>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mi>)</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <mrow>
+      <mi>b</mi>
+      <mo>−</mo>
+      <mi>a</mi>
+    </mrow>
+  </mfrac>
+  <mo>,</mo>
+  <mspace width="0.5em"/>
+  <mi>x</mi>
+  <mo>∈</mo>
+  <mo>[</mo>
+  <mi>a</mi>
+  <mo>,</mo>
+  <mi>b</mi>
+  <mo>]</mo>
+</math>
 
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="epsilon_ij is i.i.d. Normal 0 sigma squared">
-        <msub><mi>ϵ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub>
-        <mover><mo>∼</mo><mrow><mi>i</mi><mo>.</mo><mi>i</mi><mo>.</mo><mi>d</mi><mo>.</mo></mrow></mover>
-        <mi>N</mi>
-        <mo>(</mo><mn>0</mn><mo>,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo>
-      </math>
-    </section>
-
-    <!-- CRD Sums of Squares -->
-    <section id="crd-ss" aria-labelledby="crd-ss-heading">
-      <h3 id="crd-ss-heading">CRD Sums of Squares</h3>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="SST equals SSE plus SSTrt">
-        <mi>SST</mi><mo>=</mo><mi>SSE</mi><mo>+</mo><mi>SSTrt</mi>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="N minus 1 equals N minus t plus t minus 1">
-        <mo>(</mo><mi>N</mi><mo>−</mo><mn>1</mn><mo>)</mo>
-        <mo>=</mo>
-        <mo>(</mo><mi>N</mi><mo>−</mo><mi>t</mi><mo>)</mo>
-        <mo>+</mo>
-        <mo>(</mo><mi>t</mi><mo>−</mo><mn>1</mn><mo>)</mo>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="SST equals double sum of (y_ij minus y-bar++) squared">
-        <mi>SST</mi><mo>=</mo>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow>
-          <mi>t</mi>
-        </munderover>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow>
-          <msub><mi>n</mi><mi>i</mi></msub>
-        </munderover>
-        <msup>
-          <mrow>
-            <mo>(</mo>
-            <msub><mi>y</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub>
-            <mo>−</mo>
-            <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mo>+</mo><mo>+</mo></mrow></msub>
-            <mo>)</mo>
-          </mrow>
-          <mn>2</mn>
-        </msup>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="SSE equals double sum of (y_ij minus y-bar_i+) squared">
-        <mi>SSE</mi><mo>=</mo>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow>
-          <mi>t</mi>
-        </munderover>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow>
-          <msub><mi>n</mi><mi>i</mi></msub>
-        </munderover>
-        <msup>
-          <mrow>
-            <mo>(</mo>
-            <msub><mi>y</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub>
-            <mo>−</mo>
-            <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mi>i</mi><mo>+</mo></mrow></msub>
-            <mo>)</mo>
-          </mrow>
-          <mn>2</mn>
-        </msup>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="SSTrt equals double sum of (y-bar_i+ minus y-bar++) squared">
-        <mi>SSTrt</mi><mo>=</mo>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow>
-          <mi>t</mi>
-        </munderover>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow>
-          <msub><mi>n</mi><mi>i</mi></msub>
-        </munderover>
-        <msup>
-          <mrow>
-            <mo>(</mo>
-            <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mi>i</mi><mo>+</mo></mrow></msub>
-            <mo>−</mo>
-            <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mo>+</mo><mo>+</mo></mrow></msub>
-            <mo>)</mo>
-          </mrow>
-          <mn>2</mn>
-        </msup>
-      </math>
-    </section>
-
-    <!-- CRD Inference -->
-    <section id="crd-inference" aria-labelledby="crd-inference-heading">
-      <h3 id="crd-inference-heading">CRD Inference</h3>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="Test statistic equals MSTrt over MSE, distributed as F with t minus 1 and N minus t degrees of freedom under H_0">
-        <mi>T.S.</mi>
-        <mo>=</mo>
-        <mfrac><mi>MSTrt</mi><mi>MSE</mi></mfrac>
-        <mspace width="0.5em"></mspace>
-        <mover><mo>∼</mo><msub><mi>H</mi><mn>0</mn></msub></mover>
-        <mspace width="0.5em"></mspace>
-        <msub><mi>F</mi><mrow><mi>t</mi><mo>−</mo><mn>1</mn><mo>,</mo><mi>N</mi><mo>−</mo><mi>t</mi></mrow></msub>
-      </math>
-    </section>
-
-    <!-- Post Hoc Comparisons -->
-    <section id="post-hoc" aria-labelledby="post-hoc-heading">
-      <h3 id="post-hoc-heading">Post Hoc Comparisons</h3>
-
-      <p>Bonferroni:</p>
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="Bonferroni confidence interval for difference of treatment means">
-        <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mi>i</mi><mo>+</mo></mrow></msub>
-        <mo>−</mo>
-        <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mi>j</mi><mo>+</mo></mrow></msub>
-        <mo>∓</mo>
-        <msub>
-          <mi>t</mi>
-          <mrow><mn>1</mn><mo>−</mo><mi>α</mi><mo>/</mo><mo>(</mo><mn>2</mn><mi>g</mi><mo>)</mo><mo>,</mo><mi>N</mi><mo>−</mo><mi>t</mi></mrow>
-        </msub>
-        <msqrt>
-          <mrow>
-            <mi>MSE</mi>
-            <mrow>
-              <mo>(</mo>
-              <mfrac><mn>1</mn><msub><mi>n</mi><mi>i</mi></msub></mfrac>
-              <mo>+</mo>
-              <mfrac><mn>1</mn><msub><mi>n</mi><mi>j</mi></msub></mfrac>
-              <mo>)</mo>
-            </mrow>
-          </mrow>
-        </msqrt>
-      </math>
-
-      <p>Tukey:</p>
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="Tukey confidence interval for difference of treatment means">
-        <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mi>i</mi><mo>+</mo></mrow></msub>
-        <mo>−</mo>
-        <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mi>j</mi><mo>+</mo></mrow></msub>
-        <mo>∓</mo>
-        <msub>
-          <mi>q</mi>
-          <mrow><mn>1</mn><mo>−</mo><mi>α</mi><mo>;</mo><mi>t</mi><mo>,</mo><mi>N</mi><mo>−</mo><mi>t</mi></mrow>
-        </msub>
-        <msqrt>
-          <mfrac><mi>MSE</mi><mi>n</mi></mfrac>
-        </msqrt>
-      </math>
-
-      <p>Where:</p>
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="n equals t divided by sum of reciprocals of n_i">
-        <mi>n</mi>
-        <mo>=</mo>
-        <mfrac>
-          <mi>t</mi>
-          <mrow>
-            <mfrac><mn>1</mn><msub><mi>n</mi><mn>1</mn></msub></mfrac>
-            <mo>+</mo><mo>⋯</mo><mo>+</mo>
-            <mfrac><mn>1</mn><msub><mi>n</mi><mi>t</mi></msub></mfrac>
-          </mrow>
-        </mfrac>
-      </math>
-    </section>
-
-    <!-- RBD Model -->
-    <section id="rbd-model" aria-labelledby="rbd-model-heading">
-      <h3 id="rbd-model-heading">RBD Model</h3>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="Y_ij equals mu plus alpha_i plus beta_j plus epsilon_ij">
-        <msub><mi>Y</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub>
-        <mo>=</mo>
-        <mi>μ</mi><mo>+</mo>
-        <msub><mi>α</mi><mi>i</mi></msub>
-        <mo>+</mo>
-        <msub><mi>β</mi><mi>j</mi></msub>
-        <mo>+</mo>
-        <msub><mi>ϵ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="epsilon_ij is i.i.d. Normal 0 sigma squared">
-        <msub><mi>ϵ</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub>
-        <mover><mo>∼</mo><mrow><mi>i</mi><mo>.</mo><mi>i</mi><mo>.</mo><mi>d</mi><mo>.</mo></mrow></mover>
-        <mi>N</mi>
-        <mo>(</mo><mn>0</mn><mo>,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo>)</mo>
-      </math>
-    </section>
-
-    <!-- RBD Sum of Squares -->
-    <section id="rbd-ss" aria-labelledby="rbd-ss-heading">
-      <h3 id="rbd-ss-heading">RBD Sum of Squares</h3>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="SST equals SSE plus SSTrt plus SSBlock">
-        <mi>SST</mi><mo>=</mo><mi>SSE</mi><mo>+</mo><mi>SSTrt</mi><mo>+</mo><mi>SSBlock</mi>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="Degrees of freedom: bt minus 1 equals b minus 1 times t minus 1 plus t minus 1 plus b minus 1">
-        <mo>(</mo><mi>b</mi><mi>t</mi><mo>−</mo><mn>1</mn><mo>)</mo>
-        <mo>=</mo>
-        <mo>(</mo><mi>b</mi><mo>−</mo><mn>1</mn><mo>)</mo>
-        <mo>(</mo><mi>t</mi><mo>−</mo><mn>1</mn><mo>)</mo>
-        <mo>+</mo>
-        <mo>(</mo><mi>t</mi><mo>−</mo><mn>1</mn><mo>)</mo>
-        <mo>+</mo>
-        <mo>(</mo><mi>b</mi><mo>−</mo><mn>1</mn><mo>)</mo>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="SST equals double sum of (y_ij minus y-bar++) squared">
-        <mi>SST</mi><mo>=</mo>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow>
-          <mi>t</mi>
-        </munderover>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow>
-          <mi>b</mi>
-        </munderover>
-        <msup>
-          <mrow>
-            <mo>(</mo>
-            <msub><mi>y</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub>
-            <mo>−</mo>
-            <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mo>+</mo><mo>+</mo></mrow></msub>
-            <mo>)</mo>
-          </mrow>
-          <mn>2</mn>
-        </msup>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="SSTrt equals sum over i of b times (y-bar_i+ minus y-bar++) squared">
-        <mi>SSTrt</mi><mo>=</mo>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow>
-          <mi>t</mi>
-        </munderover>
+<p>with <math xmlns="http://www.w3.org/1998/Math/MathML"display="inline" aria-label="expected value of X equals a plus b over 2">
+  <mi>E</mi>
+  <mi>(</mi>
+  <mi>X</mi>
+  <mi>)</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mi>a</mi>
+      <mo>+</mo>
+      <mi>b</mi>
+    </mrow>
+    <mn>2</mn>
+  </mfrac>
+</math>, <math xmlns="http://www.w3.org/1998/Math/MathML"display="inline" aria-label="variance of X equals b minus a squared over 12">
+  <mi>V</mi>
+  <mi>(</mi>
+  <mi>X</mi>
+  <mi>)</mi>
+  <mo>=</mo>
+  <mfrac>
+    <msup>
+      <mrow>
+        <mo>(</mo>
         <mi>b</mi>
+        <mo>−</mo>
+        <mi>a</mi>
+        <mo>)</mo>
+      </mrow>
+      <mn>2</mn>
+    </msup>
+    <mn>12</mn>
+  </mfrac>
+</math></p>
+
+<p>Normal:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML"display="block" aria-label="f of x semicolon mu comma sigma equals 1 over square root of 2 pi sigma squared, times e to the negative 1 over 2 sigma squared times x minus mu squared, for negative infinity less than x less than infinity">
+  <mi>f</mi>
+  <mi>(</mi>
+  <mi>x</mi>
+  <mo>;</mo>
+  <mi>μ</mi>
+  <mo>,</mo>
+  <mi>σ</mi>
+  <mi>)</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mn>1</mn>
+    <msqrt>
+      <mn>2</mn>
+      <mi>π</mi>
+      <msup>
+        <mi>σ</mi>
+        <mn>2</mn>
+      </msup>
+    </msqrt>
+  </mfrac>
+  <msup>
+    <mi>e</mi>
+    <mfrac>
+      <mrow>
+        <mo>−</mo>
+        <mn>1</mn>
+      </mrow>
+      <mrow>
+        <mn>2</mn>
         <msup>
-          <mrow>
-            <mo>(</mo>
-            <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mi>i</mi><mo>+</mo></mrow></msub>
-            <mo>−</mo>
-            <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mo>+</mo><mo>+</mo></mrow></msub>
-            <mo>)</mo>
-          </mrow>
+          <mi>σ</mi>
           <mn>2</mn>
         </msup>
-      </math>
+      </mrow>
+    </mfrac>
+  </msup>
+  <msup>
+    <mrow>
+      <mo>(</mo>
+      <mi>x</mi>
+      <mo>−</mo>
+      <mi>μ</mi>
+      <mo>)</mo>
+    </mrow>
+    <mn>2</mn>
+  </msup>
+  <mo>,</mo>
+  <mspace width="0.5em"/>
+  <mo>−</mo>
+  <mi>∞</mi>
+  <mo>&lt;</mo>
+  <mi>x</mi>
+  <mo>&lt;</mo>
+  <mi>∞</mi>
+</math>
 
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="SSBlock equals sum over j of t times (y-bar_+j minus y-bar++) squared">
-        <mi>SSBlock</mi><mo>=</mo>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow>
-          <mi>b</mi>
-        </munderover>
-        <mi>t</mi>
-        <msup>
-          <mrow>
-            <mo>(</mo>
-            <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mo>+</mo><mi>j</mi></mrow></msub>
-            <mo>−</mo>
-            <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mo>+</mo><mo>+</mo></mrow></msub>
-            <mo>)</mo>
-          </mrow>
-          <mn>2</mn>
-        </msup>
-      </math>
+<p>with <math xmlns="http://www.w3.org/1998/Math/MathML"display="inline" aria-label="expected value of X equals mu">
+  <mi>E</mi>
+  <mo>(</mo>
+  <mi>X</mi>
+  <mo>)</mo>
+  <mo>=</mo>
+  <mi>μ</mi>
+</math>, <math xmlns="http://www.w3.org/1998/Math/MathML"display="inline" aria-label="variance of X equals sigma squared">
+  <mi>V</mi>
+  <mo>(</mo>
+  <mi>X</mi>
+  <mo>)</mo>
+  <mo>=</mo>
+  <msup>
+    <mi>σ</mi>
+    <mn>2</mn>
+  </msup>
+</math></p>
 
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="SSE equals double sum of (y_ij minus y-bar_i+ minus y-bar_+j plus y-bar++) squared">
-        <mi>SSE</mi><mo>=</mo>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow>
-          <mi>t</mi>
-        </munderover>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow>
-          <mi>b</mi>
-        </munderover>
-        <msup>
-          <mrow>
-            <mo>(</mo>
-            <msub><mi>y</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub>
-            <mo>−</mo>
-            <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mi>i</mi><mo>+</mo></mrow></msub>
-            <mo>−</mo>
-            <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mo>+</mo><mi>j</mi></mrow></msub>
-            <mo>+</mo>
-            <msub><mover><mi>y</mi><mo>_</mo></mover><mrow><mo>+</mo><mo>+</mo></mrow></msub>
-            <mo>)</mo>
-          </mrow>
-          <mn>2</mn>
-        </msup>
-      </math>
+<p>Chi-square:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML"display="block" aria-label="f of x semicolon nu equals not needed, for x greater than 0">
+  <mi>f</mi>
+  <mo>(</mo>
+  <mi>x</mi>
+  <mo>;</mo>
+  <mi>ν</mi>
+  <mo>)</mo>
+  <mo>=</mo>
+  <mtext>not needed</mtext>
+  <mo>,</mo>
+  <mspace width="1em"/>
+  <mi>x</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math>
+
+<p>with <math display="inline" aria-label="expected value of X equals nu">
+  <mi>E</mi>
+  <mo>(</mo>
+  <mi>X</mi>
+  <mo>)</mo>
+  <mo>=</mo>
+  <mi>ν</mi>
+</math>, <math display="inline" aria-label="variance of X equals 2 nu">
+  <mi>V</mi>
+  <mo>(</mo>
+  <mi>X</mi>
+  <mo>)</mo>
+  <mo>=</mo>
+  <mn>2</mn>
+  <mi>ν</mi>
+</math></p>
+
+<p>t-distribution:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML"display="block" aria-label="f of x semicolon nu equals not needed, for negative infinity less than x less than infinity">
+  <mi>f</mi>
+  <mo>(</mo>
+  <mi>x</mi>
+  <mo>;</mo>
+  <mi>ν</mi>
+  <mo>)</mo>
+  <mo>=</mo>
+  <mtext>not needed</mtext>
+  <mo>,</mo>
+  <mspace width="1em"/>
+  <mo>−</mo>
+  <mi>∞</mi>
+  <mo>&lt;</mo>
+  <mi>x</mi>
+  <mo>&lt;</mo>
+  <mi>∞</mi>
+</math>
+
+<p>F-distribution:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML"display="block" aria-label="f of x semicolon nu 1 comma nu 2 equals not needed, for x greater than 0">
+  <mi>f</mi>
+  <mo>(</mo>
+  <mi>x</mi>
+  <mo>;</mo>
+  <msub>
+    <mi>ν</mi>
+    <mn>1</mn>
+  </msub>
+  <mo>,</mo>
+  <msub>
+    <mi>ν</mi>
+    <mn>2</mn>
+  </msub>
+  <mo>)</mo>
+  <mo>=</mo>
+  <mtext>not needed</mtext>
+  <mo>,</mo>
+  <mspace width="1em"/>
+  <mi>x</mi>
+  <mo>&gt;</mo>
+  <mn>0</mn>
+</math>
     </section>
 
-    <!-- RBD Inference -->
-    <section id="rbd-inference" aria-labelledby="rbd-inference-heading">
-      <h3 id="rbd-inference-heading">RBD Inference</h3>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="Test statistic equals MSTrt over MSE, distributed as F with t minus 1 and (b minus 1)(t minus 1) degrees of freedom under H_0">
-        <mi>T.S.</mi>
-        <mo>=</mo>
-        <mfrac><mi>MSTrt</mi><mi>MSE</mi></mfrac>
-        <mspace width="0.5em"></mspace>
-        <mover><mo>∼</mo><msub><mi>H</mi><mn>0</mn></msub></mover>
-        <mspace width="0.5em"></mspace>
-        <msub>
-          <mi>F</mi>
-          <mrow>
-            <mi>t</mi><mo>−</mo><mn>1</mn><mo>,</mo>
-            <mo>(</mo><mi>b</mi><mo>−</mo><mn>1</mn><mo>)</mo>
-            <mo>(</mo><mi>t</mi><mo>−</mo><mn>1</mn><mo>)</mo>
-          </mrow>
-        </msub>
-      </math>
-    </section>
-
-    <!-- RBD Post Hoc -->
-    <section id="rbd-post-hoc" aria-labelledby="rbd-post-hoc-heading">
-      <h3 id="rbd-post-hoc-heading">RBD Post Hoc</h3>
-
-      <p>Same as in CRD with:</p>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="n_i equals b">
-        <msub><mi>n</mi><mi>i</mi></msub><mo>=</mo><mi>b</mi>
-      </math>
-
-      <p>and</p>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="df error equals (b minus 1)(t minus 1)">
-        <mi>df error</mi>
-        <mo>=</mo>
-        <mo>(</mo><mi>b</mi><mo>−</mo><mn>1</mn><mo>)</mo>
-        <mo>(</mo><mi>t</mi><mo>−</mo><mn>1</mn><mo>)</mo>
-      </math>
-    </section>
 
   </main>
 
