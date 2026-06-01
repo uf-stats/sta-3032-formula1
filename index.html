@@ -116,9 +116,9 @@
       <ul>
         <li><a href="#sample-statistics">Sample Statistics</a></li>
         <li><a href="#combinatorics">Combinatorics</a></li>
+        <li><a href="#probability">Probability</a></li>
 	<li><a href="#linear-transformations">Linear Transformations</a></li>
 	<li><a href="#linear-combinations">Linear Combinations</a></li>
-        <li><a href="#regression-ss">Regression Sum of Squares</a></li>
         <li><a href="#model-evaluation">Model Evaluation</a></li>
         <li><a href="#inference-regression">Inference for Regression</a></li>
         <li><a href="#crd-model">CRD Model</a></li>
@@ -277,6 +277,178 @@
 </section>
 
 
+    <!-- Probability -->
+    <section id="probability" aria-labelledby="probability-heading">
+      <h3 id="probability-heading">Probability</h3>
+
+
+<p>Addition law:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="Probability of A union B equals probability of A plus probability of B minus probability of A intersection B">
+  <mi>P</mi>
+  <mo>(</mo>
+  <mi>A</mi>
+  <mo>∪</mo>
+  <mi>B</mi>
+  <mo>)</mo>
+  <mo>=</mo>
+  <mi>P</mi>
+  <mo>(</mo>
+  <mi>A</mi>
+  <mo>)</mo>
+  <mo>+</mo>
+  <mi>P</mi>
+  <mo>(</mo>
+  <mi>B</mi>
+  <mo>)</mo>
+  <mo>−</mo>
+  <mi>P</mi>
+  <mo>(</mo>
+  <mi>A</mi>
+  <mo>∩</mo>
+  <mi>B</mi>
+  <mo>)</mo>
+</math>
+
+<p>Conditional probability:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="Probability of A given B equals probability of A intersection B over probability of B, and probability of B given A equals probability of A intersection B over probability of A">
+  <mi>P</mi>
+  <mi>(</mi>
+  <mi>A</mi>
+  <mo>|</mo>
+  <mi>B</mi>
+  <mi>)</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mi>P</mi>
+      <mo>(</mo>
+      <mi>A</mi>
+      <mo>∩</mo>
+      <mi>B</mi>
+      <mo>)</mo>
+    </mrow>
+    <mrow>
+      <mi>P</mi>
+      <mo>(</mo>
+      <mi>B</mi>
+      <mo>)</mo>
+    </mrow>
+  </mfrac>
+  <mo>,</mo>
+  <mspace width="1em"/>
+  <mi>P</mi>
+  <mi>(</mi>
+  <mi>B</mi>
+  <mo>|</mo>
+  <mi>A</mi>
+  <mi>)</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mi>P</mi>
+      <mo>(</mo>
+      <mi>A</mi>
+      <mo>∩</mo>
+      <mi>B</mi>
+      <mo>)</mo>
+    </mrow>
+    <mrow>
+      <mi>P</mi>
+      <mo>(</mo>
+      <mi>A</mi>
+      <mo>)</mo>
+    </mrow>
+  </mfrac>
+</math>
+
+<p>Bayes Theorem:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="Probability of A sub i given B equals probability of B given A sub i times probability of A sub i over probability of B, which equals probability of B given A sub i times probability of A sub i over sum over j of probability of B given A sub j times probability of A sub j">
+  <mi>P</mi>
+  <mi>(</mi>
+  <msub>
+    <mi>A</mi>
+    <mi>i</mi>
+  </msub>
+  <mo>|</mo>
+  <mi>B</mi>
+  <mi>)</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mi>P</mi>
+      <mo>(</mo>
+      <mi>B</mi>
+      <mo>|</mo>
+      <msub>
+        <mi>A</mi>
+        <mi>i</mi>
+      </msub>
+      <mo>)</mo>
+      <mspace width="0.2em"/>
+      <mi>P</mi>
+      <mo>(</mo>
+      <msub>
+        <mi>A</mi>
+        <mi>i</mi>
+      </msub>
+      <mo>)</mo>
+    </mrow>
+    <mrow>
+      <mi>P</mi>
+      <mo>(</mo>
+      <mi>B</mi>
+      <mo>)</mo>
+    </mrow>
+  </mfrac>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mi>P</mi>
+      <mo>(</mo>
+      <mi>B</mi>
+      <mo>|</mo>
+      <msub>
+        <mi>A</mi>
+        <mi>i</mi>
+      </msub>
+      <mo>)</mo>
+      <mspace width="0.2em"/>
+      <mi>P</mi>
+      <mo>(</mo>
+      <msub>
+        <mi>A</mi>
+        <mi>i</mi>
+      </msub>
+      <mo>)</mo>
+    </mrow>
+    <mrow>
+      <munder>
+        <mo>∑</mo>
+        <mi>j</mi>
+      </munder>
+      <mi>P</mi>
+      <mo>(</mo>
+      <mi>B</mi>
+      <mo>|</mo>
+      <msub>
+        <mi>A</mi>
+        <mi>j</mi>
+      </msub>
+      <mo>)</mo>
+      <mspace width="0.2em"/>
+      <mi>P</mi>
+      <mo>(</mo>
+      <msub>
+        <mi>A</mi>
+        <mi>j</mi>
+      </msub>
+      <mo>)</mo>
+    </mrow>
+  </mfrac>
+</math>
+    </section>
+
+
 <section id="linear-transformations" aria-labelledby="linear-transformations-heading">
       <h3 id="linear-transformations-heading">Linear Transformations</h3>
 
@@ -375,92 +547,6 @@
     </section>
 
 
-    <!-- Regression Sum of Squares -->
-    <section id="regression-ss" aria-labelledby="regression-ss-heading">
-      <h3 id="regression-ss-heading">Regression Sum of Squares</h3>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="SST equals SSE plus SSR">
-        <mi>SST</mi><mo>=</mo><mi>SSE</mi><mo>+</mo><mi>SSR</mi>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="Degrees of freedom: n minus 1 equals n minus p minus 1 plus p">
-        <mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo>
-        <mo>=</mo>
-        <mo>(</mo><mi>n</mi><mo>−</mo><mi>p</mi><mo>−</mo><mn>1</mn><mo>)</mo>
-        <mo>+</mo>
-        <mi>p</mi>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="SST equals sum of (y_i minus y-bar) squared">
-        <mi>SST</mi><mo>=</mo>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow>
-          <mi>n</mi>
-        </munderover>
-        <msup>
-          <mrow>
-            <mo>(</mo><msub><mi>y</mi><mi>i</mi></msub>
-            <mo>−</mo>
-            <mover><mi>y</mi><mo>_</mo></mover>
-            <mo>)</mo>
-          </mrow>
-          <mn>2</mn>
-        </msup>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="SSE equals sum of (y_i minus y-hat_i) squared">
-        <mi>SSE</mi><mo>=</mo>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow>
-          <mi>n</mi>
-        </munderover>
-        <msup>
-          <mrow>
-            <mo>(</mo><msub><mi>y</mi><mi>i</mi></msub>
-            <mo>−</mo>
-            <msub><mover><mi>y</mi><mo>^</mo></mover><mi>i</mi></msub>
-            <mo>)</mo>
-          </mrow>
-          <mn>2</mn>
-        </msup>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="SSR equals sum of (y-hat_i minus y-bar) squared">
-        <mi>SSR</mi><mo>=</mo>
-        <munderover>
-          <mo>∑</mo>
-          <mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow>
-          <mi>n</mi>
-        </munderover>
-        <msup>
-          <mrow>
-            <mo>(</mo>
-            <msub><mover><mi>y</mi><mo>^</mo></mover><mi>i</mi></msub>
-            <mo>−</mo>
-            <mover><mi>y</mi><mo>_</mo></mover>
-            <mo>)</mo>
-          </mrow>
-          <mn>2</mn>
-        </msup>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="MS equals SS divided by df">
-        <mi>MS</mi><mo>=</mo><mi>SS</mi><mo>/</mo><mi>df</mi>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="s squared equals MSE">
-        <msup><mi>s</mi><mn>2</mn></msup><mo>=</mo><mi>MSE</mi>
-      </math>
-    </section>
 
     <!-- Model Evaluation Measures -->
     <section id="model-evaluation" aria-labelledby="model-evaluation-heading">
