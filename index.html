@@ -117,9 +117,9 @@
         <li><a href="#sample-statistics">Sample Statistics</a></li>
         <li><a href="#combinatorics">Combinatorics</a></li>
         <li><a href="#probability">Probability</a></li>
+        <li><a href="#random-variables">Random Variables</a></li>
 	<li><a href="#linear-transformations">Linear Transformations</a></li>
 	<li><a href="#linear-combinations">Linear Combinations</a></li>
-        <li><a href="#model-evaluation">Model Evaluation</a></li>
         <li><a href="#inference-regression">Inference for Regression</a></li>
         <li><a href="#crd-model">CRD Model</a></li>
         <li><a href="#crd-ss">CRD Sums of Squares</a></li>
@@ -448,6 +448,366 @@
 </math>
     </section>
 
+    <!-- Random Variables -->
+    <section id="random-variables" aria-labelledby="random-variables-heading">
+      <h3 id="random-variables-heading">Random Variables</h3>
+
+<p>Mean:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="Expected value of X equals integral from negative infinity to infinity of x times f of x dx, or sum over all x in S of x times p of x">
+  <mi>E</mi>
+  <mi>(</mi>
+  <mi>X</mi>
+  <mo>)</mo>
+  <mo>=</mo>
+  <msubsup>
+    <mo>∫</mo>
+    <mrow>
+      <mo>−</mo>
+      <mi>∞</mi>
+    </mrow>
+    <mi>∞</mi>
+  </msubsup>
+  <mi>x</mi>
+  <mi>f</mi>
+  <mi>(</mi>
+  <mi>x</mi>
+  <mo>)</mo>
+  <mspace width="0.2em"/>
+  <mi>d</mi>
+  <mi>x</mi>
+  <mspace width="1em"/>
+  <mtext>or</mtext>
+  <mspace width="1em"/>
+  <munder>
+    <mo>∑</mo>
+    <mrow>
+      <mo>∀</mo>
+      <mi>x</mi>
+      <mo>∈</mo>
+      <mi>S</mi>
+    </mrow>
+  </munder>
+  <mi>x</mi>
+  <mi>p</mi>
+  <mi>(</mi>
+  <mi>x</mi>
+  <mi>)</mi>
+</math>
+
+<p>Variance:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="Variance of X equals expected value of X minus expected value of X squared, which equals expected value of X squared minus expected value of X squared">
+  <mi>V</mi>
+  <mo>(</mo>
+  <mi>X</mi>
+  <mo>)</mo>
+  <mo>=</mo>
+  <mi>E</mi>
+  <mo>[</mo>
+  <msup>
+    <mrow>
+      <mo>{</mo>
+      <mi>X</mi>
+      <mo>−</mo>
+      <mi>E</mi>
+      <mo>(</mo>
+      <mi>X</mi>
+      <mo>)</mo>
+      <mo>}</mo>
+    </mrow>
+    <mn>2</mn>
+  </msup>
+  <mo>]</mo>
+  <mo>=</mo>
+  <mi>E</mi>
+  <mo>(</mo>
+  <msup>
+    <mi>X</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>)</mo>
+  <mo>−</mo>
+  <msup>
+    <mi>E</mi>
+    <mn>2</mn>
+  </msup>
+  <mo>(</mo>
+  <mi>X</mi>
+  <mo>)</mo>
+</math>
+
+<p>Covariance:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="Covariance of X and Y equals expected value of X minus expected value of X times Y minus expected value of Y">
+  <mtext>Cov</mtext>
+  <mo>(</mo>
+  <mi>X</mi>
+  <mo>,</mo>
+  <mi>Y</mi>
+  <mo>)</mo>
+  <mo>=</mo>
+  <mi>E</mi>
+  <mo>[</mo>
+  <mo>{</mo>
+  <mi>X</mi>
+  <mo>−</mo>
+  <mi>E</mi>
+  <mo>(</mo>
+  <mi>X</mi>
+  <mo>)</mo>
+  <mo>}</mo>
+  <mo>{</mo>
+  <mi>Y</mi>
+  <mo>−</mo>
+  <mi>E</mi>
+  <mo>(</mo>
+  <mi>Y</mi>
+  <mo>)</mo>
+  <mo>}</mo>
+  <mo>]</mo>
+</math>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="which equals expected value of X times Y minus expected value of X times expected value of Y">
+  <mo>=</mo>
+  <mi>E</mi>
+  <mo>(</mo>
+  <mi>X</mi>
+  <mi>Y</mi>
+  <mo>)</mo>
+  <mo>−</mo>
+  <mi>E</mi>
+  <mo>(</mo>
+  <mi>X</mi>
+  <mo>)</mo>
+  <mi>E</mi>
+  <mo>(</mo>
+  <mi>Y</mi>
+  <mo>)</mo>
+</math>
+
+<p>Correlation:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="rho equals covariance of X and Y over square root of variance of X times variance of Y">
+  <mi>ρ</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mtext>Cov</mtext>
+      <mo>(</mo>
+      <mi>X</mi>
+      <mo>,</mo>
+      <mi>Y</mi>
+      <mo>)</mo>
+    </mrow>
+    <msqrt>
+      <mi>V</mi>
+      <mo>(</mo>
+      <mi>X</mi>
+      <mo>)</mo>
+      <mi>V</mi>
+      <mo>(</mo>
+      <mi>Y</mi>
+      <mo>)</mo>
+    </msqrt>
+  </mfrac>
+</math>
+
+<p>Population Percentiles:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="F of x sub p equals integral from negative infinity to x sub p of f of t dt equals p over 100">
+  <mi>F</mi>
+  <mi>(</mi>
+  <msub>
+    <mi>x</mi>
+    <mi>p</mi>
+  </msub>
+  <mi>)</mi>
+  <mo>=</mo>
+  <msubsup>
+    <mo>∫</mo>
+    <mrow>
+      <mo>−</mo>
+      <mi>∞</mi>
+    </mrow>
+    <msub>
+      <mi>x</mi>
+      <mi>p</mi>
+    </msub>
+  </msubsup>
+  <mi>f</mi>
+  <mi>(</mi>
+  <mi>t</mi>
+  <mi>)</mi>
+  <mi>d</mi>
+  <mi>t</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mi>p</mi>
+    <mn>100</mn>
+  </mfrac>
+</math>
+
+<p>Conditional Distribution:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="f sub Y given X of y given x equals f of x comma y over f sub X of x">
+  <msub>
+    <mi>f</mi>
+    <mrow>
+      <mi>Y</mi>
+      <mo>|</mo>
+      <mi>X</mi>
+    </mrow>
+  </msub>
+  <mi>(</mi>
+  <mi>y</mi>
+  <mo>|</mo>
+  <mi>x</mi>
+  <mi>)</mi>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mi>f</mi>
+      <mo>(</mo>
+      <mi>x</mi>
+      <mo>,</mo>
+      <mi>y</mi>
+      <mo>)</mo>
+    </mrow>
+    <mrow>
+      <msub>
+        <mi>f</mi>
+        <mi>X</mi>
+      </msub>
+      <mo>(</mo>
+      <mi>x</mi>
+      <mo>)</mo>
+    </mrow>
+  </mfrac>
+</math>
+
+<p>Conditional Expectation:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="Expected value of Y given X equals integral from negative infinity to infinity of y times f sub Y given X of y given x dy">
+  <mi>E</mi>
+  <mi>(</mi>
+  <mi>Y</mi>
+  <mo>|</mo>
+  <mi>X</mi>
+  <mi>)</mi>
+  <mo>=</mo>
+  <msubsup>
+    <mo>∫</mo>
+    <mrow>
+      <mo>−</mo>
+      <mi>∞</mi>
+    </mrow>
+    <mi>∞</mi>
+  </msubsup>
+  <mi>y</mi>
+  <msub>
+    <mi>f</mi>
+    <mrow>
+      <mi>Y</mi>
+      <mo>|</mo>
+      <mi>X</mi>
+    </mrow>
+  </msub>
+  <mi>(</mi>
+  <mi>y</mi>
+  <mo>|</mo>
+  <mi>x</mi>
+  <mi>)</mi>
+  <mi>d</mi>
+  <mi>y</mi>
+</math>
+
+<p>Chebyshev Inequality:</p>
+<ul>
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="Probability that absolute value of X minus mu sub X is greater than or equal to k sigma is less than or equal to 1 over k squared">
+    <mi>P</mi>
+    <mo>(</mo>
+    <mo>|</mo>
+    <mi>X</mi>
+    <mo>−</mo>
+    <msub>
+      <mi>μ</mi>
+      <mi>X</mi>
+    </msub>
+    <mo>|</mo>
+    <mo>≥</mo>
+    <mi>k</mi>
+    <mi>σ</mi>
+    <mo>)</mo>
+    <mo>≤</mo>
+    <mfrac>
+      <mn>1</mn>
+      <msup>
+        <mi>k</mi>
+        <mn>2</mn>
+      </msup>
+    </mfrac>
+  </math></li>
+  <li><math xmlns="http://www.w3.org/1998/Math/MathML" display="inline" aria-label="Probability that absolute value of X minus mu sub X is less than k sigma is greater than or equal to 1 minus 1 over k squared">
+    <mi>P</mi>
+    <mo>(</mo>
+    <mo>|</mo>
+    <mi>X</mi>
+    <mo>−</mo>
+    <msub>
+      <mi>μ</mi>
+      <mi>X</mi>
+    </msub>
+    <mo>|</mo>
+    <mo>&lt;</mo>
+    <mi>k</mi>
+    <mi>σ</mi>
+    <mo>)</mo>
+    <mo>≥</mo>
+    <mn>1</mn>
+    <mo>−</mo>
+    <mfrac>
+      <mn>1</mn>
+      <msup>
+        <mi>k</mi>
+        <mn>2</mn>
+      </msup>
+    </mfrac>
+  </math></li>
+</ul>
+
+<p>Cumulative Distribution Function:</p>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block" aria-label="F of x equals integral from negative infinity to x of f of t dt, or sum over t less than or equal to x of p of t">
+  <mi>F</mi>
+  <mi>(</mi>
+  <mi>x</mi>
+  <mi>)</mi>
+  <mo>=</mo>
+  <msubsup>
+    <mo>∫</mo>
+    <mrow>
+      <mo>−</mo>
+      <mi>∞</mi>
+    </mrow>
+    <mi>x</mi>
+  </msubsup>
+  <mi>f</mi>
+  <mi>(</mi>
+  <mi>t</mi>
+  <mi>)</mi>
+  <mi>d</mi>
+  <mi>t</mi>
+  <mspace width="1em"/>
+  <mtext>or</mtext>
+  <mspace width="1em"/>
+  <munder>
+    <mo>∑</mo>
+    <mrow>
+      <mi>t</mi>
+      <mo>≤</mo>
+      <mi>x</mi>
+    </mrow>
+  </munder>
+  <mi>p</mi>
+  <mi>(</mi>
+  <mi>t</mi>
+  <mi>)</mi>
+</math>
+    </section>
+
 
 <section id="linear-transformations" aria-labelledby="linear-transformations-heading">
       <h3 id="linear-transformations-heading">Linear Transformations</h3>
@@ -548,52 +908,7 @@
 
 
 
-    <!-- Model Evaluation Measures -->
-    <section id="model-evaluation" aria-labelledby="model-evaluation-heading">
-      <h3 id="model-evaluation-heading">Model Evaluation Measures</h3>
 
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="R squared equals SSR over SST equals 1 minus SSE over SST">
-        <msup><mi>R</mi><mn>2</mn></msup>
-        <mo>=</mo><mi>SSR</mi><mo>/</mo><mi>SST</mi>
-        <mo>=</mo>
-        <mn>1</mn><mo>−</mo><mi>SSE</mi><mo>/</mo><mi>SST</mi>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="Adjusted R squared formula">
-        <msubsup><mi>R</mi><mi>adj</mi><mn>2</mn></msubsup>
-        <mo>=</mo>
-        <msup><mi>R</mi><mn>2</mn></msup>
-        <mo>−</mo>
-        <mo>(</mo><mn>1</mn><mo>−</mo><msup><mi>R</mi><mn>2</mn></msup><mo>)</mo>
-        <mfrac>
-          <mi>p</mi>
-          <mrow><mi>n</mi><mo>−</mo><mi>p</mi><mo>−</mo><mn>1</mn></mrow>
-        </mfrac>
-        <mo>=</mo>
-        <mn>1</mn><mo>−</mo>
-        <mfrac>
-          <mrow><mi>SSE</mi><mo>/</mo><mo>(</mo><mi>n</mi><mo>−</mo><mi>p</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow>
-          <mrow><mi>SST</mi><mo>/</mo><mo>(</mo><mi>n</mi><mo>−</mo><mn>1</mn><mo>)</mo></mrow>
-        </mfrac>
-      </math>
-
-      <math xmlns="http://www.w3.org/1998/Math/MathML" display="block"
-            aria-label="AIC equals 2 times p plus 1 plus n log SSE over n plus c">
-        <mi>AIC</mi>
-        <mo>=</mo>
-        <mn>2</mn><mo>(</mo><mi>p</mi><mo>+</mo><mn>1</mn><mo>)</mo>
-        <mo>+</mo>
-        <mi>n</mi><mo>log</mo>
-        <mrow>
-          <mo>(</mo>
-          <mfrac><mi>SSE</mi><mi>n</mi></mfrac>
-          <mo>)</mo>
-        </mrow>
-        <mo>+</mo><mi>c</mi>
-      </math>
-    </section>
 
     <!-- Inference for Regression Analysis -->
     <section id="inference-regression" aria-labelledby="inference-regression-heading">
